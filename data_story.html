@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Climate Responsibility Data Story</title>
+    <link rel="stylesheet" href="data_story_style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-brand">Climate Responsibility</div>
+
+        <div class="group-names">Group: Alice, Bob, Charlie, Dana</div>
+
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <label for="nav-toggle" class="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+    </nav>
+
+    <header class="main-header">
+      <h1>Project Title: Climate Responsibility</h1>
+      <p class="intro-text">
+        Exploring the intersection of CO2 emissions, natural disasters, and
+        global public opinion.
+      </p>
+    </header>
+
+    <main class="dashboard-container">
+      <section class="column left-col">
+        <div class="card">
+          <h2>World Map (Interactive)</h2>
+          <div class="map-controls">
+            <div class="placeholder-box" id="world-map">
+              [Interactive Map Placeholder]
+            </div>
+            <div class="filter-panel">
+              <strong>Disaster Type</strong>
+              <label><input type="checkbox" /> Type A</label>
+              <label><input type="checkbox" /> Type B</label>
+              <label><input type="checkbox" /> Type C</label>
+            </div>
+          </div>
+          <div class="timeline-container">
+            <button class="play-btn">▶</button>
+            <input
+              type="range"
+              min="2000"
+              max="2024"
+              value="2000"
+              class="slider"
+            />
+            <div class="timeline-labels">
+              <span>2000</span>
+              <span>2024</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Correlation</h2>
+          <div class="correlation-layout">
+            <div class="placeholder-box" id="scatter-plot">
+              [Scatter Plot: Variable X vs Variable Y/Z]
+            </div>
+            <div class="variable-selection">
+              <strong>Variables</strong>
+              <label><input type="radio" name="var" /> Y</label>
+              <label><input type="radio" name="var" /> Z</label>
+            </div>
+          </div>
+          <div class="dropdown-container">
+            <label for="var-x">Variable X:</label>
+            <select id="var-x">
+              <option>CO2 Emissions</option>
+              <option>Disaster Frequency</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <section class="column right-col">
+        <div class="top-stats grid-2">
+          <div class="card small-card">
+            <h3>CO2 pr. Country</h3>
+            <div class="placeholder-box mini-map">[Mini Map]</div>
+          </div>
+          <div class="card small-card">
+            <h3>Top 10 Countries with Disasters</h3>
+            <div class="placeholder-box list-placeholder">[List/Bar Chart]</div>
+          </div>
+        </div>
+
+        <div class="card vote-section">
+          <h2>Peoples' Climate Vote</h2>
+          <p class="sub-text">
+            Placeholder for survey methodology or key takeaway.
+          </p>
+
+          <div class="vote-content">
+            <div class="response-dist">
+              <h3>Response Distribution</h3>
+              <div class="placeholder-box bars">[Stacked Bar Charts]</div>
+            </div>
+            <div class="vote-filters">
+              <div class="filter-group">
+                <label>Countries</label>
+                <select>
+                  <option>Global</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <label>Age</label>
+                <select>
+                  <option>18-69</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <label>Education</label>
+                <select>
+                  <option>Low</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
