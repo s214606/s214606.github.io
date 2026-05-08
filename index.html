@@ -135,11 +135,14 @@
 
     <!-- Single chart 2 -->
     <p class="section-label">PEOPLES' CLIMATE VOTE</p>
-    <div class="chart-single">
-      <div class="chart-placeholder" style="min-height: 360px;">
-        <svg class="chart-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-        <span class="chart-placeholder-label">Chart 6</span>
-        <span class="chart-placeholder-sub">Paste Plotly embed here</span>
+    <div class="chart-single" style="display:flex;flex-direction:column;align-items:center;">
+      <div class="chart-placeholder chart-placeholder--iframe">
+        <iframe
+          src="../visualizations/pcv_response_distribution.html"
+          width="700"
+          height="500"
+          frameborder="0"
+        ></iframe>
       </div>
       <p class="chart-caption">Fig. 6 - Global opinions on climate change by category, 2024</p>
     </div>

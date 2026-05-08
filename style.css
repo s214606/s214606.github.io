@@ -229,6 +229,15 @@
       color: rgba(122,153,187,0.55);
     }
 
+    .chart-placeholder--iframe {
+      min-height: 0;
+      background: transparent;
+      border: none;
+      width: fit-content;
+      overflow: visible;
+    }
+    .chart-placeholder--iframe::before { display: none; }
+
     /* Caption under charts */
     .chart-caption {
       font-size: 0.72rem;
