@@ -155,27 +155,38 @@
 
     <!-- Chart row 3 -->
     <p class="section-label">THE POLARIZED GLOBE</p>
-    <div class="chart-grid-2">
-      <div>
-        <div class="chart-placeholder">
-          <svg class="chart-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-          <span class="chart-placeholder-label">Chart 7</span>
-          <span class="chart-placeholder-sub">Paste Plotly embed here</span>
-        </div>
-        <p class="chart-caption">Fig. 7 - Principal Component Analysis and Gaussian Mixture Model clustering of peoples' opinions (First two principal components plotted), 2024</p>
-      </div>
-      <div>
+    <div class="chart-single" style="display:flex;flex-direction:column;align-items:center;">
       <div class="chart-placeholder chart-placeholder--iframe">
         <iframe
-          src="../visualizations/pcv_choropleth.html"
-          width="700"
-          height="400"
+          src="../visualizations/pcv_pca_gmm.html"
+          width="1200"
+          height="600"
           frameborder="0"
         ></iframe>
       </div>
-        <p class="chart-caption">Fig. 8 - Clustering of peoples' opinions (Gaussian Mixture Model) on choropleth map, 2024</p>
-      </div>
+      <p class="chart-caption">Fig. 7 - Principal Component Analysis and Gaussian Mixture Model clustering of peoples' opinions (First two principal components plotted), 2024</p>
     </div>
+
+        <!-- Paragraph PCA -->
+    <div class="prose">
+      <p>
+        nice text
+      </p>
+    </div>
+
+        <div class="chart-single" style="display:flex;flex-direction:column;align-items:center;">
+      <div class="chart-placeholder chart-placeholder--iframe">
+        <iframe
+          src="../visualizations/pcv_choropleth.html"
+          width="800"
+          height="440"
+          frameborder="0"
+        ></iframe>
+      </div>
+      <p class="chart-caption">Fig. 8 - Clustering of peoples' opinions (Gaussian Mixture Model) on choropleth map, 2024</p>
+    </div>
+
+
   </section>
 
   <!-- ── Closing paragraphs ── -->
