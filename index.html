@@ -134,7 +134,7 @@
     </div>
 
     <!-- Single chart 2 -->
-    <p class="section-label">PEOPLES' CLIMATE VOTE</p>
+    <p class="section-label">PEOPLES' CLIMATE VOTE 2024</p>
     <div class="chart-single" style="display:flex;flex-direction:column;align-items:center;">
       <div class="chart-placeholder chart-placeholder--iframe">
         <iframe
@@ -150,19 +150,24 @@
     <!-- Paragraph 5 -->
     <div class="prose">
       <p>
-        When looking at the Peoples' perspective category of questions, it is clear that we globally see that people are worried. Especially regarding extreme weather events, 43% of the global population reports that they a experiencing a frequency of extreme weather events that is worse than usual.
+        When looking at the Peoples' perspective category of questions, it is clear that we globally see that people are worried.
+        Especially regarding extreme weather events, 43% of the global population reports that they a experiencing a frequency of extreme weather events that is worse than usual.
       </p>
       <p>
-        Similarly, when looking at the past regarding to the question of how worried they are compared to "last year" (2023), there is a majority of 53% who feel more worried.
+        Similarly, when looking at the past regarding to the question of how worried they are compared to "last year" (2023),
+        there is a majority of 53% who feel more worried.
       </p>
       <p>
-        When looking at the future, we see that most people are somewhat worried for the future generations. 34% percent of the global population report that they are "somewhat" worried about the effects of climate change on the future generations and perhaps we should take this as a sign that positive change is needed.
+        When looking at the future, we see that most people are somewhat worried for the future generations.
+        34% percent of the global population report that they are "somewhat" worried about the effects of climate change on the future generations and perhaps we should take this as a sign that positive change is needed.
       </p>
       <p>
-        Overall, it is very clear that we are globally worried about climate change, but is it always the case that people think in such way? That most people worry? 
+        Overall, it is very clear that we are globally worried about climate change, but is it always the case that people think in such way?
+        That most people worry? 
       </p>
       <p>
-        Some people might claim that the rich countries don't care about climate change because they have the resources to adapt to it, while the low-income countries are more vulnerable and thus care more about climate change. But is this true? Do people in rich countries really care less about climate change than people in lower income countries?.
+        Some people might claim that the rich countries don't care about climate change because they have the resources to adapt to it,
+        while the low-income countries are more vulnerable and thus care more about climate change. But is this true? Do people in rich countries really care less about climate change than people in lower income countries?.
       </p>
     </div>
 
@@ -177,13 +182,50 @@
           frameborder="0"
         ></iframe>
       </div>
-      <p class="chart-caption">Fig. 7 - Principal Component Analysis and Gaussian Mixture Model clustering of peoples' opinions (First two principal components plotted), 2024</p>
+      <p class="chart-caption">Fig. 7 - PCA and GMM (binary) clustering of peoples' opinions from the previous 2024 Peoples' Climate Vote, 2024.
+        Each data point is a country and the size of the data points represent the GNI of the country.
+        The purple color means a country is a non-high income country (not high GNI) and the red colors are high income countries.
+        The circle shape countries means the GMM assigned the country to cluster A and a diamond shape means the GMM assigned the country to cluster B.
+        Both clusters are plotted as gaussian distribution with green star centroids.
+        The axis labels are derived from the most influential PCA loadings and they represent the combination of the original opinion questions that contribute the most to the variance in the data
+      </p>
     </div>
 
         <!-- Paragraph PCA -->
     <div class="prose">
       <p>
-        nice text
+        With unsupervised machine learning techniques like Principal Component Analysis (PCA) and Gaussian Mixture Model (GMM),
+        we can attempt to answer the question of whether the wealth of a country relates to the opinions of its people,
+        or if it is just a ridiculous assumption.    
+      </p>
+      <p>
+        Survey data on peoples' opinions is very complex and of high dimensionality,
+        but with PCA we can reduce the dimensionality of the data and compactly visualize it in two dimensions that capture the most variance.
+        With GMM, we can then cluster the countries based on their opinions and see if there are any patterns that emerge as seen in Fig. 7.
+      </p>
+      <p>
+        Just quickly skimming across Fig. 7, it is evident that there are two clusters that appear from the opinion data. 
+        They each represent a cluster of similar climate change opinions, but it is not immediately clear what they mean.
+      </p>
+      <p>
+        When taking a deeper look, we can see a lot of the countries in red cluster B are rich countries by the size of the data points,
+        and the purple cluster contains mostly small, low-income countries. This already indicates that there is some relation between the wealth of a country and in which opionion cluster they fall in.
+      </p>
+      <p>
+        However, one convenient part of PCA is that we can investigate the so called "loadings" of the original data features (in this case, 
+        the original opinion questions) and see how they relate to the new PCA dimensions.
+        This tells us which combination of the original opinion questions contribute the most to the variance in the data we see in the plot and thus are the most influential in separating the clusters.
+      </p>
+      <p>
+        We see, using the labels that are derived from the PCA loadings, that the x-axis is most influenced by questions such as
+        "Should rich countries give more or less help to poorer countries to address climate change?" and similar questions regarding call for action.
+      </p>
+      <p>
+        The rich countries in the red cluster lean more to the right, representing wanting to maintain status quo,
+        while the purple cluster leans more to the left, representing wanting more action and change regarding climate change.
+      </p>
+      <p>
+        The picture is now clear. The rich countries want to keep status quo. The non-rich countries demand more action for mending climate change.
       </p>
     </div>
 
@@ -196,7 +238,7 @@
           frameborder="0"
         ></iframe>
       </div>
-      <p class="chart-caption">Fig. 8 - Clustering of peoples' opinions (Gaussian Mixture Model) on choropleth map, 2024</p>
+      <p class="chart-caption">Fig. 8 - Clustering of peoples' opinions (Gaussian Mixture Model) on choropleth map, 2024. The dark blue countries belong to cluster A and the red countries belong to cluster B. The greyish countries mean that there is not a combination of opinion data and GNI data on them</p>
     </div>
 
 
@@ -207,10 +249,15 @@
     <div class="prose-pair">
       <div class="prose">
         <p>
-          Maybe it is not surprising that rich countries end up in a similar opinion cluster. In cluster B, we see rich countries such as Australia, Canada, Germany, United States, China, France. 
+          Maybe it is not surprising that rich countries end up in a similar opinion cluster.
+          In cluster B, we see rich countries such as Australia, Canada, Germany, United States, China, France. 
         </p>
         <p>
-          From the previous GMM clustered principal component plot (fig. 7), it was evident that cluster B contained a lot of rich countries, but more notably, we can better understand now that the aforementioned countries have more similar opinions about maintaining status quo regarding climate change.
+          From the previous GMM clustered PCA plot (fig. 7), it was evident that cluster B contained a lot of rich countries,
+          but more notably, we can better understand now that the aforementioned rich countries have more similar opinions about maintaining status quo regarding climate change. Countries that are usually thought of as being "a part of the West".
+        </p>
+        <p>
+          The rich western countries don't seem to want change. They want to maintain status quo and enjoy the benefits of the current idle, non-progressive system.
         </p>
       </div>
 
