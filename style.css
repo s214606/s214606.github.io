@@ -198,6 +198,17 @@ section {
   margin: 2rem 0;
 }
 
+.chart-grid-2-disasters {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.chart-single {
+  margin: 2rem 0;
+}
+
 /* ── Chart Placeholder ───────────────────────────────────── */
 .chart-placeholder {
   background: var(--surface);
@@ -248,6 +259,11 @@ section {
   width: fit-content;
   overflow: visible;
 }
+
+.chart-placeholder--iframe-disaster {
+  width: 100%;
+}
+
 .chart-placeholder--iframe::before {
   display: none;
 }
