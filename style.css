@@ -202,7 +202,7 @@ section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: start;
-  gap: 1rem;
+  gap: 1.2rem;
   margin: 2rem 0;
 }
 .chart-single {
