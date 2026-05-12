@@ -1,0 +1,2 @@
+If you encounter issues with the notebook on git hub, we have a deepnote notebook here: 
+https://deepnote.com/workspace/JUNOVERSE-16d253e2-e266-4e8d-931a-477ea2397a51/project/Project-B-Climate-Change-83bdab40-70e8-43a4-ac97-25817ffc22b9/notebook/Project-B-Climate-Change-baa3ee0044e040c2adb2557cc02cfcd7?utm_source=share-modal&utm_medium=product-shared-content&utm_campaign=notebook&utm_content=83bdab40-70e8-43a4-ac97-25817ffc22b9
