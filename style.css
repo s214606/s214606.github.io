@@ -63,6 +63,12 @@ body {
   flex-direction: column;
   gap: 0.1rem;
 }
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-left: auto;
+}
 .topbar-project {
   font-family: var(--serif);
   font-size: 0.95rem;
