@@ -1,583 +1,541 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Climate Change Data Story | Project Assignment B</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- ═══════════════════════════════════════════════════════════
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Climate Change Data Story | Project Assignment B</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- ═══════════════════════════════════════════════════════════
      ROTATING GLOBE  (Three.js wireframe)
 ═══════════════════════════════════════════════════════════ -->
-    <canvas id="globe-canvas"></canvas>
+  <canvas id="globe-canvas"></canvas>
 
-    <!-- ═══════════════════════════════════════════════════════════
+  <!-- ═══════════════════════════════════════════════════════════
      STICKY TOP BAR
 ═══════════════════════════════════════════════════════════ -->
-    <header id="topbar">
-      <div class="topbar-left">
-        <span class="topbar-project">Climate Change Data Story</span>
-        <span class="topbar-meta"
-          >Group 15 &nbsp;·&nbsp; Juno Luu (s214606) &nbsp;·&nbsp; Meike Anders
-          (s257300) &nbsp;·&nbsp; Nicole Grabmaier (s257669)
-        </span>
-      </div>
-      <!-- <a href="grid-view.html" class="topbar-btn"> 
-        <svg
-          width="14"
-          height="14"
-          viewBox="0 0 16 16"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-        >
-          <rect x="1" y="1" width="6" height="6" rx="0.5" />
-          <rect x="9" y="1" width="6" height="6" rx="0.5" />
-          <rect x="1" y="9" width="6" height="6" rx="0.5" />
-          <rect x="9" y="9" width="6" height="6" rx="0.5" />
-        </svg>
-        Grid View
-      </a> -->
-    </header>
+  <header id="topbar">
+    <div class="topbar-left">
+      <span class="topbar-project">Climate Change Data Story</span>
+      <span class="topbar-meta">Group 15 &nbsp;·&nbsp; Juno Luu (s214606) &nbsp;·&nbsp; Meike Anders
+        (s257300) &nbsp;·&nbsp; Nicole Grabmaier (s257669)
+      </span>
+    </div>
+    <a href="https://github.com/s214606/s214606.github.io/blob/main/Notebook/Project%20B%20-%20Climate%20Change.ipynb"
+      class="topbar-btn">
+      <svg width="25px" height="25px" viewBox="0 0 1024 1024" class="icon" version="1.1"
+        xmlns="http://www.w3.org/2000/svg">
+        <path d="M719.8 651.8m-10 0a10 10 0 1 0 20 0 10 10 0 1 0-20 0Z" fill="#E73B37" />
+        <path
+          d="M512.1 64H172v896h680V385.6L512.1 64z m278.8 324.3h-280v-265l280 265zM808 916H216V108h278.6l0.2 0.2v296.2h312.9l0.2 0.2V916z"
+          fill="#39393A" />
+        <path d="M280.5 530h325.9v16H280.5z" fill="#39393A" />
+        <path d="M639.5 530h90.2v16h-90.2z" fill="#E73B37" />
+        <path d="M403.5 641.8h277v16h-277z" fill="#39393A" />
+        <path d="M280.6 641.8h91.2v16h-91.2z" fill="#E73B37" />
+        <path d="M279.9 753.7h326.5v16H279.9z" fill="#39393A" />
+        <path d="M655.8 753.7h73.9v16h-73.9z" fill="#E73B37" />
+      </svg>
+      EXPLAINER NOTEBOOK
+    </a>
+  </header>
 
-    <!-- ═══════════════════════════════════════════════════════════
+  <!-- ═══════════════════════════════════════════════════════════
      PAGE CONTENT
 ═══════════════════════════════════════════════════════════ -->
-    <div class="page">
-      <!-- Hero -->
-      <div class="hero">
-        <p class="hero-eyebrow">Project Assignment B · 12 May 2026</p>
-        <h1>A Planet Under <em>Pressure</em></h1>
-        <p class="hero-subtitle">
-          Exploring the evidence, patterns, and consequences of accelerating
-          climate change through data.
+  <div class="page">
+    <!-- Hero -->
+    <div class="hero">
+      <p class="hero-eyebrow">Project Assignment B · 12 May 2026</p>
+      <h1>A Planet Under <em>Pressure</em></h1>
+      <p class="hero-subtitle">
+        Exploring the evidence, patterns, and consequences of accelerating
+        climate change through data.
+      </p>
+      <div class="hero-divider"></div>
+    </div>
+
+    <!-- ── Section 1 ── -->
+    <section>
+      <p class="section-label">Introduction</p>
+
+      <div class="prose">
+        <p>
+          Climate change will transform the world as we know it within the
+          next few decades. As humans and children of this earth, we have the
+          responsibility to take care of our world and the environment we live
+          in. But are all nations sharing this responsibility equally? Do we
+          all suffer the same consequences of climate change? This data story
+          aims to reveal some answers to these questions. It analyses data on
+          CO₂ emissions over the last 54 years together with natural disasters
+          that will possibly rise and have more impact on the global
+          population in the coming years due to climate change.
         </p>
-        <div class="hero-divider"></div>
+        <p>
+          If we want to reduce the impact of climate change, it's not a task
+          for each person individually. We need to work together. Most nations
+          are democratically led, which means that the people of the country
+          can decide who they want to vote for, in the hope of getting a
+          government that takes action. But how aware and concerned are
+          different nations about this globally? We will shed some light on
+          this at the end of the website by looking at the People's Climate
+          Vote Survey.
+        </p>
       </div>
 
-      <!-- ── Section 1 ── -->
-      <section>
-        <p class="section-label">Introduction</p>
-
-        <div class="prose">
-          <p>
-            Climate change will transform the world as we know it within the
-            next few decades. As humans and children of this earth, we have the
-            responsibility to take care of our world and the environment we live
-            in. But are all nations sharing this responsibility equally? Do we
-            all suffer the same consequences of climate change? This data story
-            aims to reveal some answers to these questions. It analyses data on
-            CO₂ emissions over the last 54 years together with natural disasters
-            that will possibly rise and have more impact on the global
-            population in the coming years due to climate change.
-          </p>
-          <p>
-            If we want to reduce the impact of climate change, it's not a task
-            for each person individually. We need to work together. Most nations
-            are democratically led, which means that the people of the country
-            can decide who they want to vote for, in the hope of getting a
-            government that takes action. But how aware and concerned are
-            different nations about this globally? We will shed some light on
-            this at the end of the website by looking at the People's Climate
-            Vote Survey.
+      <!-- Chart row 1 -->
+      <div class="chart-grid-2">
+        <div>
+          <div class="chart-placeholder chart-placeholder--iframe">
+            <iframe src="../visualizations/line_global_co2_1970-2024.html" frameborder="0" width="630"
+              height="450"></iframe>
+          </div>
+          <p class="chart-caption">
+            Fig. 1 - Trend of cumulative global CO₂ emissions from 1970 to
+            2024. The data shows that CO₂ emissions have constantly risen
+            globally over the last 54 years, with only minor drops during
+            global crises such as the 2020 Covid epidemic.
           </p>
         </div>
-
-        <!-- Chart row 1 -->
-        <div class="chart-grid-2">
-          <div>
-            <div class="chart-placeholder chart-placeholder--iframe">
-              <iframe
-                src="../visualizations/line_global_co2_1970-2024.html"
-                frameborder="0"
-                width="630"
-                height="450"
-              ></iframe>
-            </div>
-            <p class="chart-caption">
-              Fig. 1 - Trend of cumulative global CO₂ emissions from 1970 to
-              2024. The data shows that CO₂ emissions have constantly risen
-              globally over the last 54 years, with only minor drops during
-              global crises such as the 2020 Covid epidemic.
-            </p>
+        <div>
+          <div class="chart-placeholder chart-placeholder--iframe">
+            <iframe src="../visualizations/co2_emissions_map_TotalSum_1970-2024.html" frameborder="0" width="700"
+              height="450"></iframe>
           </div>
-          <div>
-            <div class="chart-placeholder chart-placeholder--iframe">
-              <iframe
-                src="../visualizations/co2_emissions_map_TotalSum_1970-2024.html"
-                frameborder="0"
-                width="700"
-                height="450"
-              ></iframe>
-            </div>
-            <p class="chart-caption">
-              Fig. 2 - The CO₂ emission map summarises data from 1970 to 2024.
-              The data shows the total emissions of CO₂ per country over this
-              period. A significant divide can be seen between a majority of low
-              emitters and a majority of high emitters, with China and the USA
-              standing out as the highest emitters of the last five decades.
-            </p>
-          </div>
-        </div>
-
-        <!-- Paragraph 2 -->
-        <div class="prose">
-          <p>
-            Global CO₂ emissions rose to nearly 40 million tonnes per year in
-            2024 which is exacerbating climate change. If no action is taken,
-            global warming and its effects will increase. To mitigate future
-            impacts because of global warming, the constant rise in CO₂
-            emissions must be stopped. However, not all nations emit the same
-            amount of CO₂. Nations with a high population and a lot of industry,
-            in particular, emit more than others. Of the 225 nations, soverign
-            states, tettitories and areas in our dataset, the top three emitters
-            (China, the USA and India) emit nearly the same amount as the other
-            222 nations combined. Nevertheless, climate change is a global event
-            that will affect everyone, regardless of their nation. This
-            highlights a significant global inequality. The differences are so
-            significant in the data that a log10 scale was needed to show even
-            the small differences between nations.
+          <p class="chart-caption">
+            Fig. 2 - The CO₂ emission map summarises data from 1970 to 2024.
+            The data shows the total emissions of CO₂ per country over this
+            period. A significant divide can be seen between a majority of low
+            emitters and a majority of high emitters, with China and the USA
+            standing out as the highest emitters of the last five decades.
           </p>
         </div>
+      </div>
 
-        <!-- Chart row 2 -->
-        <p class="section-label">Natural Disasters related to climate change</p>
-        <div class="chart-grid-2">
-          <div>
-            <!-- <div class="chart-placeholder chart-placeholder--iframe-disaster"> -->
-                <iframe
-              src="../visualizations/em-dat_norm_top10_by_climate_diseaster_impact.html"
-              frameborder="0"
-              style="width: 100%; height: 550px"
-            ></iframe>
-            <!-- </div> -->
-            <p class="chart-caption">
-              Fig. 3 - Top10 Countries which are affected by climate related
-              disasters in 2000-2024. The figure shows the top 10 countries that
-              are most affected by climate related disasters, cumulatively in
-              the period of 2000-2024. The affected population is shown relative
-              to the population of the country.
-            </p>
-          </div>
-          <div>
-            <!-- <div class="chart-placeholder chart-placeholder--iframe-disaster"> -->
-              <iframe
-                src="../visualizations/em-dat_interactive_world_map.html"
-                frameborder="0"
-                style="width: 700px; height: 550px"
-              ></iframe>
-              <!-- </div> -->
-            <p class="chart-caption">
-              Fig. 4 - Global Climate Related Disasters per Country and Year,
-              2000-2024. The figure illustrates either the absolute number of
-              people affected by climate-related disasters or the number of
-              affected individuals per one million inhabitants, presented for
-              each nation and year.
-            </p>
-          </div>
+      <!-- Paragraph 2 -->
+      <div class="prose">
+        <p>
+          Global CO₂ emissions rose to nearly 40 million tonnes per year in
+          2024 which is exacerbating climate change. If no action is taken,
+          global warming and its effects will increase. To mitigate future
+          impacts because of global warming, the constant rise in CO₂
+          emissions must be stopped. However, not all nations emit the same
+          amount of CO₂. Nations with a high population and a lot of industry,
+          in particular, emit more than others. Of the 225 nations, soverign
+          states, tettitories and areas in our dataset, the top three emitters
+          (China, the USA and India) emit nearly the same amount as the other
+          222 nations combined. Nevertheless, climate change is a global event
+          that will affect everyone, regardless of their nation. This
+          highlights a significant global inequality. The differences are so
+          significant in the data that a log10 scale was needed to show even
+          the small differences between nations.
+        </p>
+      </div>
+
+      <!-- Chart row 2 -->
+      <p class="section-label">Natural Disasters related to climate change</p>
+      <div class="chart-grid-2">
+        <div>
+          <!-- <div class="chart-placeholder chart-placeholder--iframe-disaster"> -->
+          <iframe src="../visualizations/em-dat_norm_top10_by_climate_diseaster_impact.html" frameborder="0"
+            style="width: 100%; height: 550px"></iframe>
+          <!-- </div> -->
+          <p class="chart-caption">
+            Fig. 3 - Top10 Countries which are affected by climate related
+            disasters in 2000-2024. The figure shows the top 10 countries that
+            are most affected by climate related disasters, cumulatively in
+            the period of 2000-2024. The affected population is shown relative
+            to the population of the country.
+          </p>
         </div>
+        <div>
+          <!-- <div class="chart-placeholder chart-placeholder--iframe-disaster"> -->
+          <iframe src="../visualizations/em-dat_interactive_world_map.html" frameborder="0"
+            style="width: 700px; height: 550px"></iframe>
+          <!-- </div> -->
+          <p class="chart-caption">
+            Fig. 4 - Global Climate Related Disasters per Country and Year,
+            2000-2024. The figure illustrates either the absolute number of
+            people affected by climate-related disasters or the number of
+            affected individuals per one million inhabitants, presented for
+            each nation and year.
+          </p>
+        </div>
+      </div>
 
-        <!-- Paragraph 3 -->
-        <div class="prose">
-          <p>
-            <!-- more text! typical effects of climatchange are natural disaster,
+      <!-- Paragraph 3 -->
+      <div class="prose">
+        <p>
+          <!-- more text! typical effects of climatchange are natural disaster,
             which might rise in the next decades. (reference) Disasters like ...
             are typical. The data shows that... So the strong emitters china and
             USA are also effected but the small nations with less CO2 as well.
             which keeps the question for inequality. -->
-            A typical consequence of anthropogenic climate change is an increase
-            in the frequency and intensity of natural hazards. In this context,
-            the term <em>climate-related disasters</em> is used to describe
-            events that are either directly influenced or statistically
-            amplified by climatic changes. These include wildfire, epidemic,
-            flood, drought, storm, extreme temperature events, glacial lake
-            outburst floods, and wet mass movement (e.g., landslides and debris
-            flows triggered by soil saturation). See for reference: Van Aalst,
-            M.K. (2006), The impacts of climate change on the risk of natural
-            disasters. Disasters, 30: 5-18.
-          </p>
-          <p>
-            Empirical data from the EM-DAT data set covering the period from
-            2000 to 2024 indicate a clear spatial and temporal heterogeneity in
-            exposure to such climate-related disasters. Compared to other global
-            regions, residents of island nations and countries in Africa appear
-            to be disproportionately affected. These countries are also mostly
-            low emitters of CO₂.
-          </p>
-          <p>
-            Among all observed populations, residents of Vanuatu represent the
-            most frequently affected group. On average, individuals in Vanuatu
-            were affected by four climate-related disaster events per person
-            over the 2000–2024 observation period. In contrast, European
-            countries exhibit comparatively low levels of exposure to
-            climate-related disasters over the same 25-year period.
-          </p>
-          <p></p>
-        </div>
+          A typical consequence of anthropogenic climate change is an increase
+          in the frequency and intensity of natural hazards. In this context,
+          the term <em>climate-related disasters</em> is used to describe
+          events that are either directly influenced or statistically
+          amplified by climatic changes. These include wildfire, epidemic,
+          flood, drought, storm, extreme temperature events, glacial lake
+          outburst floods, and wet mass movement (e.g., landslides and debris
+          flows triggered by soil saturation). See for reference: Van Aalst,
+          M.K. (2006), The impacts of climate change on the risk of natural
+          disasters. Disasters, 30: 5-18.
+        </p>
+        <p>
+          Empirical data from the EM-DAT data set covering the period from
+          2000 to 2024 indicate a clear spatial and temporal heterogeneity in
+          exposure to such climate-related disasters. Compared to other global
+          regions, residents of island nations and countries in Africa appear
+          to be disproportionately affected. These countries are also mostly
+          low emitters of CO₂.
+        </p>
+        <p>
+          Among all observed populations, residents of Vanuatu represent the
+          most frequently affected group. On average, individuals in Vanuatu
+          were affected by four climate-related disaster events per person
+          over the 2000–2024 observation period. In contrast, European
+          countries exhibit comparatively low levels of exposure to
+          climate-related disasters over the same 25-year period.
+        </p>
+        <p></p>
+      </div>
 
-        <!-- Single chart -->
-        <p class="section-label">THE CONNECTION</p>
-        <div
-          class="chart-single"
-          style="display: flex; flex-direction: column; align-items: center"
-        >
-          <div class="chart-placeholder chart-placeholder--iframe">
-            <iframe
-              src="../visualizations/correlation_normalized_affected_co2.html"
-              width="1200"
-              height="600"
-              frameborder="0"
-            ></iframe>
-          </div>
-          <p class="chart-caption">
-            Fig. 5 - Correlation between CO₂ emissions and the number of people
-            affected by disasters, relative to the country's population. Each
-            bubble represents a country, with the bubble's size indicating its
-            population. CO₂ emissions are scaled to log₁₀ on the x-axis to make
-            the data easier to visualise, and the y-axis contains the number of
-            people affected divided by the population to provide context on the
-            proportion of people affected. The affected population is also
-            scaled to log₁₀ for better visualisation. A trend line has been
-            drawn through the data to highlight the pattern. The R coefficient
-            of correlation is plotted for each disaster type in the legend on
-            the bottom.
-          </p>
+      <!-- Single chart -->
+      <p class="section-label">THE CONNECTION</p>
+      <div class="chart-single" style="display: flex; flex-direction: column; align-items: center">
+        <div class="chart-placeholder chart-placeholder--iframe">
+          <iframe src="../visualizations/correlation_normalized_affected_co2.html" width="1200" height="600"
+            frameborder="0"></iframe>
         </div>
+        <p class="chart-caption">
+          Fig. 5 - Correlation between CO₂ emissions and the number of people
+          affected by disasters, relative to the country's population. Each
+          bubble represents a country, with the bubble's size indicating its
+          population. CO₂ emissions are scaled to log₁₀ on the x-axis to make
+          the data easier to visualise, and the y-axis contains the number of
+          people affected divided by the population to provide context on the
+          proportion of people affected. The affected population is also
+          scaled to log₁₀ for better visualisation. A trend line has been
+          drawn through the data to highlight the pattern. The R coefficient
+          of correlation is plotted for each disaster type in the legend on
+          the bottom.
+        </p>
+      </div>
 
-        <!-- Paragraph 4 -->
+      <!-- Paragraph 4 -->
+      <div class="prose">
+        <p>
+          To see if there is a relation between the amount of CO₂ nations emit
+          and the natural disasters that affect people in these, a correlation
+          is calculated. As you navigate through the disaster type, you can
+          see that they all have one thing in common: an downward-facing trend
+          line showing a negative correlation between countries with low CO₂
+          emissions and those more affected by natural disasters per capita.
+          This further highlights the inequality in the effects of climate
+          change. It affects those with low CO₂ emissions more than those who
+          really drove global warming. So action is needed, and it must be
+          driven by the people of this planet.
+        </p>
+      </div>
+
+      <!-- Single chart 2 -->
+      <p class="section-label">PEOPLES' CLIMATE VOTE 2024</p>
+      <div class="chart-single" style="display: flex; flex-direction: column; align-items: center">
+        <div class="chart-placeholder chart-placeholder--iframe">
+          <iframe src="../visualizations/pcv_response_distribution.html" width="700" height="500"
+            frameborder="0"></iframe>
+        </div>
+        <p class="chart-caption">
+          Fig. 6 - Global opinions on climate change by category, 2024. The
+          colored areas respresent the majority response to the respective
+          question, and the grey areas are the rest of the answeres of the
+          question. All answers are in % and add up to 100%
+        </p>
+      </div>
+
+      <!-- Paragraph 5 -->
+      <div class="prose">
+        <p>
+          We know action is needed, but is this reflected in how people think?
+        </p>
+        <p>
+          When looking at the Peoples' perspective category of questions, it
+          is clear that we globally see that people are worried. Especially
+          regarding extreme weather events, 43% of the global population
+          reports that they are experiencing a frequency of extreme weather
+          events that is worse than usual.
+        </p>
+        <p>
+          Similarly, when looking at the past regarding the question of how
+          worried they are compared to "last year" (2023), there is a majority
+          of 53% who feel more worried.
+        </p>
+        <p>
+          When looking at the future, we see that most people are somewhat
+          worried for the future generations. 34% percent of the global
+          population report that they are "somewhat" worried about the effects
+          of climate change on the future generations and perhaps we should
+          take this as a sign that positive change is needed to give future
+          generations a habitable environment.
+        </p>
+        <p>
+          Overall, it is very clear that we are globally worried about climate
+          change, but is it always the case that people think in such way?
+          That most people worry?
+        </p>
+        <p>
+          Some people might claim that the rich countries don't care about
+          climate change because they have the resources to adapt to it, while
+          the low-income countries are more vulnerable and thus care more
+          about climate change. But is this true? Do people in rich countries
+          really care less about climate change than people in lower income
+          countries?.
+        </p>
+      </div>
+
+      <!-- Chart row 3 -->
+      <p class="section-label">THE POLARIZED GLOBE</p>
+      <div class="chart-single" style="display: flex; flex-direction: column; align-items: center">
+        <div class="chart-placeholder chart-placeholder--iframe">
+          <iframe src="../visualizations/pcv_pca_gmm.html" width="1200" height="600" frameborder="0"></iframe>
+        </div>
+        <p class="chart-caption">
+          Fig. 7 - PCA and GMM (binary) clustering of peoples' opinions from
+          the previous 2024 Peoples' Climate Vote, 2024. Each data point is a
+          country and the size of the data points represent the GNI of the
+          country. The purple color means a country is a non-high income
+          country (not high GNI) and the red colors are high income countries.
+          The circle shape countries means the GMM assigned the country to
+          cluster A and a diamond shape means the GMM assigned the country to
+          cluster B. Both clusters are plotted as gaussian distribution with
+          green star centroids. The axis labels are derived from the most
+          influential PCA loadings and they represent the combination of the
+          original opinion questions that contribute the most to the variance
+          in the data
+        </p>
+      </div>
+
+      <!-- Paragraph PCA -->
+      <div class="prose">
+        <p>
+          With unsupervised machine learning techniques like Principal
+          Component Analysis (PCA) and Gaussian Mixture Model (GMM), we can
+          attempt to answer the question of whether the wealth of a country
+          relates to the opinions of its people, or if it is just a ridiculous
+          assumption.
+        </p>
+        <p>
+          Survey data on peoples' opinions is very complex and of high
+          dimensionality, but with PCA we can reduce the dimensionality of the
+          data and compactly visualize it in two dimensions that capture the
+          most variance. With GMM, we can then cluster the countries based on
+          their opinions and see if there are any patterns that emerge as seen
+          in Fig. 7.
+        </p>
+        <p>
+          Just quickly skimming across Fig. 7, it is evident that there are
+          two clusters that appear from the opinion data. They each represent
+          a cluster of similar climate change opinions, but it is not
+          immediately clear what they mean.
+        </p>
+        <p>
+          When taking a deeper look, we can see a lot of the countries in red
+          cluster B are rich countries by the size of the data points, and the
+          purple cluster contains mostly small, low-income countries. This
+          already indicates that there is some relation between the wealth of
+          a country and in which opionion cluster they fall in.
+        </p>
+        <p>
+          However, one convenient part of PCA is that we can investigate the
+          so called "loadings" of the original data features (in this case,
+          the original opinion questions) and see how they relate to the new
+          PCA dimensions. This tells us which combination of the original
+          opinion questions contribute the most to the variance in the data we
+          see in the plot and thus are the most influential in separating the
+          clusters.
+        </p>
+        <p>
+          We see, using the labels that are derived from the PCA loadings,
+          that the x-axis is most influenced by questions such as "Should rich
+          countries give more or less help to poorer countries to address
+          climate change?" and similar questions regarding call for action.
+        </p>
+        <p>
+          The rich countries in the red cluster lean more to the right,
+          representing wanting to maintain status quo, while the purple
+          cluster leans more to the left, representing wanting more action and
+          change regarding climate change.
+        </p>
+        <p>
+          The picture is now clear. The rich countries want to keep status
+          quo. The non-rich countries demand more action for mending climate
+          change.
+        </p>
+      </div>
+
+      <div class="chart-single" style="display: flex; flex-direction: column; align-items: center">
+        <div class="chart-placeholder chart-placeholder--iframe">
+          <iframe src="../visualizations/pcv_choropleth.html" width="800" height="440" frameborder="0"></iframe>
+        </div>
+        <p class="chart-caption">
+          Fig. 8 - Clustering of peoples' opinions (Gaussian Mixture Model) on
+          choropleth map, 2024. The dark blue countries belong to cluster A
+          and the red countries belong to cluster B. The greyish countries
+          mean that there is not a combination of opinion data and GNI data on
+          them
+        </p>
+      </div>
+    </section>
+
+    <!-- ── Closing paragraphs ── -->
+    <section>
+      <div class="prose-pair">
         <div class="prose">
           <p>
-            To see if there is a relation between the amount of CO₂ nations emit
-            and the natural disasters that affect people in these, a correlation
-            is calculated. As you navigate through the disaster type, you can
-            see that they all have one thing in common: an downward-facing trend
-            line showing a negative correlation between countries with low CO₂
-            emissions and those more affected by natural disasters per capita.
-            This further highlights the inequality in the effects of climate
-            change. It affects those with low CO₂ emissions more than those who
-            really drove global warming. So action is needed, and it must be
-            driven by the people of this planet.
+            Maybe it is not surprising that rich countries end up in a similar
+            opinion cluster. In cluster B, we see rich countries such as
+            Australia, Canada, Germany, United States, China, France.
+          </p>
+          <p>
+            From the previous GMM clustered PCA plot (fig. 7), it was evident
+            that cluster B contained a lot of rich countries, but more
+            notably, we can better understand now that the aforementioned rich
+            countries have more similar opinions about maintaining status quo
+            regarding climate change. Countries that are usually thought of as
+            being "a part of the West".
+          </p>
+          <p>
+            The rich western countries don't seem to want change. They want to
+            maintain status quo and enjoy the benefits of the current idle,
+            non-progressive system.
+          </p>
+          <p>
+            In the end, the opinion data really sheds light on the fact that
+            the world is polarized.
           </p>
         </div>
 
-        <!-- Single chart 2 -->
-        <p class="section-label">PEOPLES' CLIMATE VOTE 2024</p>
-        <div
-          class="chart-single"
-          style="display: flex; flex-direction: column; align-items: center"
-        >
-          <div class="chart-placeholder chart-placeholder--iframe">
-            <iframe
-              src="../visualizations/pcv_response_distribution.html"
-              width="700"
-              height="500"
-              frameborder="0"
-            ></iframe>
-          </div>
-          <p class="chart-caption">
-            Fig. 6 - Global opinions on climate change by category, 2024. The
-            colored areas respresent the majority response to the respective
-            question, and the grey areas are the rest of the answeres of the
-            question. All answers are in % and add up to 100%
-          </p>
-        </div>
-
-        <!-- Paragraph 5 -->
         <div class="prose">
           <p>
-            We know action is needed, but is this reflected in how people think?
+            The world is divided. We see this division in the way CO₂ is
+            emitted globally. We see division in how nations are affected by
+            disasters related to climate change. There is also a division in
+            how people think we should act to combat climate change. But we
+            all need to remember our common ground: We all live in the same
+            world and want to maintain the same planet for future generations.
           </p>
           <p>
-            When looking at the Peoples' perspective category of questions, it
-            is clear that we globally see that people are worried. Especially
-            regarding extreme weather events, 43% of the global population
-            reports that they are experiencing a frequency of extreme weather
-            events that is worse than usual.
-          </p>
-          <p>
-            Similarly, when looking at the past regarding the question of how
-            worried they are compared to "last year" (2023), there is a majority
-            of 53% who feel more worried.
-          </p>
-          <p>
-            When looking at the future, we see that most people are somewhat
-            worried for the future generations. 34% percent of the global
-            population report that they are "somewhat" worried about the effects
-            of climate change on the future generations and perhaps we should
-            take this as a sign that positive change is needed to give future
-            generations a habitable environment.
-          </p>
-          <p>
-            Overall, it is very clear that we are globally worried about climate
-            change, but is it always the case that people think in such way?
-            That most people worry?
-          </p>
-          <p>
-            Some people might claim that the rich countries don't care about
-            climate change because they have the resources to adapt to it, while
-            the low-income countries are more vulnerable and thus care more
-            about climate change. But is this true? Do people in rich countries
-            really care less about climate change than people in lower income
-            countries?.
+            It's clear that different nations have different responsibilities
+            when it comes to climate change, and should therefore also take
+            different actions. Hopefully, this will be reflected in the
+            future, and we will not only get a People Climate Vote survey with
+            results that reflect the responsibility that nations have, but
+            also a shift in emissions so that we can continue to live on a
+            planet that is equally liveable for all.
           </p>
         </div>
+      </div>
+    </section>
+  </div>
+  <!-- /.page -->
 
-        <!-- Chart row 3 -->
-        <p class="section-label">THE POLARIZED GLOBE</p>
-        <div
-          class="chart-single"
-          style="display: flex; flex-direction: column; align-items: center"
-        >
-          <div class="chart-placeholder chart-placeholder--iframe">
-            <iframe
-              src="../visualizations/pcv_pca_gmm.html"
-              width="1200"
-              height="600"
-              frameborder="0"
-            ></iframe>
-          </div>
-          <p class="chart-caption">
-            Fig. 7 - PCA and GMM (binary) clustering of peoples' opinions from
-            the previous 2024 Peoples' Climate Vote, 2024. Each data point is a
-            country and the size of the data points represent the GNI of the
-            country. The purple color means a country is a non-high income
-            country (not high GNI) and the red colors are high income countries.
-            The circle shape countries means the GMM assigned the country to
-            cluster A and a diamond shape means the GMM assigned the country to
-            cluster B. Both clusters are plotted as gaussian distribution with
-            green star centroids. The axis labels are derived from the most
-            influential PCA loadings and they represent the combination of the
-            original opinion questions that contribute the most to the variance
-            in the data
-          </p>
-        </div>
+  <footer>
+    Climate Change Data Story &nbsp;·&nbsp; Group 15 &nbsp;·&nbsp; Project
+    Assignment B
+  </footer>
 
-        <!-- Paragraph PCA -->
-        <div class="prose">
-          <p>
-            With unsupervised machine learning techniques like Principal
-            Component Analysis (PCA) and Gaussian Mixture Model (GMM), we can
-            attempt to answer the question of whether the wealth of a country
-            relates to the opinions of its people, or if it is just a ridiculous
-            assumption.
-          </p>
-          <p>
-            Survey data on peoples' opinions is very complex and of high
-            dimensionality, but with PCA we can reduce the dimensionality of the
-            data and compactly visualize it in two dimensions that capture the
-            most variance. With GMM, we can then cluster the countries based on
-            their opinions and see if there are any patterns that emerge as seen
-            in Fig. 7.
-          </p>
-          <p>
-            Just quickly skimming across Fig. 7, it is evident that there are
-            two clusters that appear from the opinion data. They each represent
-            a cluster of similar climate change opinions, but it is not
-            immediately clear what they mean.
-          </p>
-          <p>
-            When taking a deeper look, we can see a lot of the countries in red
-            cluster B are rich countries by the size of the data points, and the
-            purple cluster contains mostly small, low-income countries. This
-            already indicates that there is some relation between the wealth of
-            a country and in which opionion cluster they fall in.
-          </p>
-          <p>
-            However, one convenient part of PCA is that we can investigate the
-            so called "loadings" of the original data features (in this case,
-            the original opinion questions) and see how they relate to the new
-            PCA dimensions. This tells us which combination of the original
-            opinion questions contribute the most to the variance in the data we
-            see in the plot and thus are the most influential in separating the
-            clusters.
-          </p>
-          <p>
-            We see, using the labels that are derived from the PCA loadings,
-            that the x-axis is most influenced by questions such as "Should rich
-            countries give more or less help to poorer countries to address
-            climate change?" and similar questions regarding call for action.
-          </p>
-          <p>
-            The rich countries in the red cluster lean more to the right,
-            representing wanting to maintain status quo, while the purple
-            cluster leans more to the left, representing wanting more action and
-            change regarding climate change.
-          </p>
-          <p>
-            The picture is now clear. The rich countries want to keep status
-            quo. The non-rich countries demand more action for mending climate
-            change.
-          </p>
-        </div>
-
-        <div
-          class="chart-single"
-          style="display: flex; flex-direction: column; align-items: center"
-        >
-          <div class="chart-placeholder chart-placeholder--iframe">
-            <iframe
-              src="../visualizations/pcv_choropleth.html"
-              width="800"
-              height="440"
-              frameborder="0"
-            ></iframe>
-          </div>
-          <p class="chart-caption">
-            Fig. 8 - Clustering of peoples' opinions (Gaussian Mixture Model) on
-            choropleth map, 2024. The dark blue countries belong to cluster A
-            and the red countries belong to cluster B. The greyish countries
-            mean that there is not a combination of opinion data and GNI data on
-            them
-          </p>
-        </div>
-      </section>
-
-      <!-- ── Closing paragraphs ── -->
-      <section>
-        <div class="prose-pair">
-          <div class="prose">
-            <p>
-              Maybe it is not surprising that rich countries end up in a similar
-              opinion cluster. In cluster B, we see rich countries such as
-              Australia, Canada, Germany, United States, China, France.
-            </p>
-            <p>
-              From the previous GMM clustered PCA plot (fig. 7), it was evident
-              that cluster B contained a lot of rich countries, but more
-              notably, we can better understand now that the aforementioned rich
-              countries have more similar opinions about maintaining status quo
-              regarding climate change. Countries that are usually thought of as
-              being "a part of the West".
-            </p>
-            <p>
-              The rich western countries don't seem to want change. They want to
-              maintain status quo and enjoy the benefits of the current idle,
-              non-progressive system.
-            </p>
-            <p>
-              In the end, the opinion data really sheds light on the fact that
-              the world is polarized.
-            </p>
-          </div>
-
-          <div class="prose">
-            <p>
-              The world is divided. We see this division in the way CO₂ is
-              emitted globally. We see division in how nations are affected by
-              disasters related to climate change. There is also a division in
-              how people think we should act to combat climate change. But we
-              all need to remember our common ground: We all live in the same
-              world and want to maintain the same planet for future generations.
-            </p>
-            <p>
-              It's clear that different nations have different responsibilities
-              when it comes to climate change, and should therefore also take
-              different actions. Hopefully, this will be reflected in the
-              future, and we will not only get a People Climate Vote survey with
-              results that reflect the responsibility that nations have, but
-              also a shift in emissions so that we can continue to live on a
-              planet that is equally liveable for all.
-            </p>
-          </div>
-        </div>
-      </section>
-    </div>
-    <!-- /.page -->
-
-    <footer>
-      Climate Change Data Story &nbsp;·&nbsp; Group 15 &nbsp;·&nbsp; Project
-      Assignment B
-    </footer>
-
-    <!-- ═══════════════════════════════════════════════════════════
+  <!-- ═══════════════════════════════════════════════════════════
      GLOBE -Three.js r128 wireframe, scroll-driven rotation
 ═══════════════════════════════════════════════════════════ -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script>
-      (function () {
-        const canvas = document.getElementById("globe-canvas");
-        const renderer = new THREE.WebGLRenderer({
-          canvas,
-          alpha: true,
-          antialias: true,
-        });
-        renderer.setPixelRatio(window.devicePixelRatio);
-        renderer.setClearColor(0x000000, 0);
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script>
+    (function () {
+      const canvas = document.getElementById("globe-canvas");
+      const renderer = new THREE.WebGLRenderer({
+        canvas,
+        alpha: true,
+        antialias: true,
+      });
+      renderer.setPixelRatio(window.devicePixelRatio);
+      renderer.setClearColor(0x000000, 0);
 
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
-        camera.position.z = 2.6;
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
+      camera.position.z = 2.6;
 
-        // ── Globe wireframe ──────────────────────────────────────
-        const geo = new THREE.SphereGeometry(1, 36, 20);
-        const mat = new THREE.MeshBasicMaterial({
-          color: 0x1a6fbd,
-          wireframe: true,
-          transparent: true,
-          opacity: 0.22,
-        });
-        const globe = new THREE.Mesh(geo, mat);
-        scene.add(globe);
+      // ── Globe wireframe ──────────────────────────────────────
+      const geo = new THREE.SphereGeometry(1, 36, 20);
+      const mat = new THREE.MeshBasicMaterial({
+        color: 0x1a6fbd,
+        wireframe: true,
+        transparent: true,
+        opacity: 0.22,
+      });
+      const globe = new THREE.Mesh(geo, mat);
+      scene.add(globe);
 
-        // Subtle inner glow sphere
-        const glowGeo = new THREE.SphereGeometry(0.995, 32, 32);
-        const glowMat = new THREE.MeshBasicMaterial({
-          color: 0xd0e4f5,
-          transparent: true,
-          opacity: 0.55,
-        });
-        scene.add(new THREE.Mesh(glowGeo, glowMat));
+      // Subtle inner glow sphere
+      const glowGeo = new THREE.SphereGeometry(0.995, 32, 32);
+      const glowMat = new THREE.MeshBasicMaterial({
+        color: 0xd0e4f5,
+        transparent: true,
+        opacity: 0.55,
+      });
+      scene.add(new THREE.Mesh(glowGeo, glowMat));
 
-        // ── Dot-ring equator accent ──────────────────────────────
-        const ringGeo = new THREE.TorusGeometry(1, 0.003, 8, 120);
-        const ringMat = new THREE.MeshBasicMaterial({
-          color: 0x1a6fbd,
-          transparent: true,
-          opacity: 0.3,
-        });
-        scene.add(new THREE.Mesh(ringGeo, ringMat));
+      // ── Dot-ring equator accent ──────────────────────────────
+      const ringGeo = new THREE.TorusGeometry(1, 0.003, 8, 120);
+      const ringMat = new THREE.MeshBasicMaterial({
+        color: 0x1a6fbd,
+        transparent: true,
+        opacity: 0.3,
+      });
+      scene.add(new THREE.Mesh(ringGeo, ringMat));
 
-        // ── Resize helper ────────────────────────────────────────
-        function resize() {
-          const W = window.innerWidth,
-            H = window.innerHeight;
-          renderer.setSize(W, H);
-          camera.aspect = W / H;
-          camera.updateProjectionMatrix();
-        }
-        resize();
-        window.addEventListener("resize", resize);
+      // ── Resize helper ────────────────────────────────────────
+      function resize() {
+        const W = window.innerWidth,
+          H = window.innerHeight;
+        renderer.setSize(W, H);
+        camera.aspect = W / H;
+        camera.updateProjectionMatrix();
+      }
+      resize();
+      window.addEventListener("resize", resize);
 
-        // ── Scroll → rotation ────────────────────────────────────
-        let scrollY = 0;
-        window.addEventListener(
-          "scroll",
-          () => {
-            scrollY = window.scrollY;
-          },
-          { passive: true }
-        );
+      // ── Scroll → rotation ────────────────────────────────────
+      let scrollY = 0;
+      window.addEventListener(
+        "scroll",
+        () => {
+          scrollY = window.scrollY;
+        },
+        { passive: true }
+      );
 
-        // ── Animation loop ───────────────────────────────────────
-        let t = 0;
-        function animate() {
-          requestAnimationFrame(animate);
-          t += 0.003;
-          const scrollFraction =
-            scrollY /
-            Math.max(1, document.body.scrollHeight - window.innerHeight);
-          globe.rotation.y = t + scrollFraction * Math.PI * 4;
-          globe.rotation.x = 0.2 + scrollFraction * 0.6;
-          renderer.render(scene, camera);
-        }
-        animate();
-      })();
-    </script>
-  </body>
+      // ── Animation loop ───────────────────────────────────────
+      let t = 0;
+      function animate() {
+        requestAnimationFrame(animate);
+        t += 0.003;
+        const scrollFraction =
+          scrollY /
+          Math.max(1, document.body.scrollHeight - window.innerHeight);
+        globe.rotation.y = t + scrollFraction * Math.PI * 4;
+        globe.rotation.x = 0.2 + scrollFraction * 0.6;
+        renderer.render(scene, camera);
+      }
+      animate();
+    })();
+  </script>
+</body>
+
 </html>
